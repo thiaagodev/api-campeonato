@@ -1,11 +1,11 @@
 const mongoose = require('../database/db');
 
-const UserSchema = new mongoose.Schema({
+const PlayerSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
     },
-    points: {
+    score: {
         type: Number,
         default: 0
     },
@@ -17,12 +17,24 @@ const UserSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
+    goalsScored: {
+        type: Number,
+        default: 0
+    },
+    concededGoals: {
+        type: Number,
+        default: 0
+    },
     goalDifference: {
+        type: Number,
+        default: 0
+    },
+    gamesPlayed: {
         type: Number,
         default: 0
     }
 });
 
-const User = mongoose.model('User', UserSchema);
+const Player = mongoose.model('Player', PlayerSchema);
 
-module.exports = User;
+module.exports = Player;
