@@ -4,14 +4,14 @@ const Routes = express.Router();
 
 const PlayerController = require('./controllers/PlayerController');
 
-Routes.get('/users', PlayerController.index);
-Routes.get('/users/:id', PlayerController.show);
+Routes.get('/players', PlayerController.index);
+Routes.get('/players/:id', PlayerController.show);
 
-Routes.post('/users', PlayerController.create);
+Routes.post('/players', PlayerController.create);
 
-Routes.put('/users/:id', PlayerController.update);
+Routes.put('/players/:id', PlayerController.update);
 
-Routes.delete('/users/:id', PlayerController.deleteOne);
-Routes.delete('/users', PlayerController.deleteAll);
+Routes.delete('/players/:id', PlayerController.deleteOne);
+Routes.delete('/players', PlayerController.deleteAll);
 
 module.exports = Routes;
