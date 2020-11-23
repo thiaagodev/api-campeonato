@@ -77,7 +77,7 @@ module.exports = {
                 gamesPlayed: 0
             }
 
-            const reset = Player.updateMany({}, resetPlayers);
+            const reset = await Player.updateMany({}, resetPlayers);
 
             return res.json(reset);
         } catch(err) {
