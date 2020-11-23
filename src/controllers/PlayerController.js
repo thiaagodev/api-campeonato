@@ -65,6 +65,26 @@ module.exports = {
         }
     },
 
+    async resetAll(req, res) {
+        try{
+            const resetPlayers = {
+                score: 0,
+                wins: 0,
+                loses: 0,
+                goalsScored: 0,
+                concededGoals: 0,
+                goalDifference: 0,
+                gamesPlayed: 0
+            }
+
+            const reset = Player.updateMany(resetPlayers);
+
+            return res.json(reset);
+        } catch(err) {
+            console.error(err);
+        }
+    },
+
     async deleteOne(req, res) {
         try{
             const { id } = req.params;
