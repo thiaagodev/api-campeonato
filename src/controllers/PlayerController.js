@@ -17,9 +17,9 @@ module.exports = {
 
     async index(req, res) {
         try{
-            const player = await Player.find().sort({ score: 'desc' });
+            const players = await Player.find().sort({ score: 'desc' });
 
-            return res.json(player);
+            return res.json(players);
         } catch(err) {
             console.error(err);
         }
@@ -53,7 +53,7 @@ module.exports = {
                 goalsScored,
                 concededGoals,
                 goalDifference,
-                gamesPlayed
+                gamesPlayed,
             }
 
             const updatedPlayer = await Player.findOneAndUpdate({ _id: id }, newPlayer);
@@ -74,10 +74,10 @@ module.exports = {
                 goalsScored: 0,
                 concededGoals: 0,
                 goalDifference: 0,
-                gamesPlayed: 0
+                gamesPlayed: 0,
             }
 
-            const reset = await Player.update({ name: { $ne: "" } }, resetPlayers);
+            const reset = await Player.updateMany({}, resetPlayers);
 
             return res.json(reset);
         } catch(err) {

@@ -32,7 +32,7 @@ const PlayerSchema = new mongoose.Schema({
     gamesPlayed: {
         type: Number,
         default: 0
-    }
+    },
 });
 
 const Player = mongoose.model('Player', PlayerSchema);
