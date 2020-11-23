@@ -77,7 +77,7 @@ module.exports = {
                 gamesPlayed: 0
             }
 
-            const reset = await Player.updateMany({}, { $set: resetPlayers});
+            const reset = await Player.update({ "name": { $ne: "" }}, { $set: resetPlayers}, {multi: true});
 
             return res.json(reset);
         } catch(err) {
