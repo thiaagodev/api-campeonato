@@ -42,18 +42,20 @@ module.exports = {
             const { wins, loses, goalsScored, concededGoals } = req.body;
             const { id } = req.params;
             
+            const player = await Player.findById(id);
+
             const score = parseInt(wins) * 3;
             const goalDifference = parseInt(goalsScored) - parseInt(concededGoals);
             const gamesPlayed = parseInt(wins) + parseInt(loses);
 
             const newPlayer = {
-                score,
-                wins,
-                loses,
-                goalsScored,
-                concededGoals,
-                goalDifference,
-                gamesPlayed,
+                score: score + player.score,
+                wins: wins + player.wins,
+                loses: loses + player.loses,
+                goalsScored: goalsScored + player.goalsScored,
+                concededGoals: concededGoals + player.concededGoals,
+                goalDifference: goalDifference + player.goalDifference,
+                gamesPlayed: gamesPlayed + player.gamesPlayed,
             }
 
             const updatedPlayer = await Player.findOneAndUpdate({ _id: id }, newPlayer);
