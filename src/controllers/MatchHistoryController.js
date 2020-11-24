@@ -2,7 +2,7 @@ const MatchHistory = require('../models/MatchHistory');
 
 module.exports = {
     async index(req, res) {
-        const history = await MatchHistory.find();
+        const history = await MatchHistory.find().sort({ createdAt: 'desc' });
 
         return res.json(history);
     },
