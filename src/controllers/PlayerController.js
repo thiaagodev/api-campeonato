@@ -1,4 +1,5 @@
 const Player = require('../models/Player');
+const MatchHistory = require('../models/MatchHistory');
 
 module.exports = {
 
@@ -79,9 +80,10 @@ module.exports = {
                 gamesPlayed: 0,
             }
 
-            const reset = await Player.updateMany({}, resetPlayers);
+            await Player.updateMany({}, resetPlayers);
+            await MatchHistory.deleteMany();
 
-            return res.json(reset);
+            return res.status(200);
         } catch(err) {
             console.error(err);
         }
