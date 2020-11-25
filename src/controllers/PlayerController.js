@@ -80,10 +80,10 @@ module.exports = {
                 gamesPlayed: 0,
             }
 
-            await Player.updateMany({}, resetPlayers);
+            const reset = await Player.updateMany({}, resetPlayers);
             await MatchHistory.deleteMany();
 
-            return res.status(200);
+            return res.json(reset);
         } catch(err) {
             console.error(err);
         }
