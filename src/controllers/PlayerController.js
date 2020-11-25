@@ -17,7 +17,7 @@ module.exports = {
 
     async index(req, res) {
         try{
-            const players = await Player.find().sort({ score: 'desc' });
+            const players = await Player.find().sort({ score: 'desc',  goalDifference: 'desc', goalsScored: 'desc'});
 
             return res.json(players);
         } catch(err) {
