@@ -25,5 +25,6 @@ Routes.get('/match-history', MatchHistoryController.index);
 Routes.post('/match-history', MatchHistoryController.create);
 
 Routes.delete('/match-history/:id', MatchHistoryController.delete);
+Routes.delete('/match-history', MatchHistoryController.deleteAll);
 
 module.exports = Routes;
