@@ -6,7 +6,10 @@ const app = express();
 const Routes = require('./routes');
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: 'https://camp-pao-de-batata.vercel.app/',
+    optionsSuccessStatus: 200
+}));
 
 app.use(Routes);
 
