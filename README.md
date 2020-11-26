@@ -5,7 +5,7 @@ Este serviço está sendo consumido por um frontend feito em React para visualiz
 
 Link do repositório do front end em React: https://github.com/viiniciusgs/tabela-campeonato
 
-Link do site hospedado na vercel: https://camp-pao-de-batata.vercel.app
+Link do site hospedado na vercel: https://rocketleague-campeonato.vercel.app
 
 ### Dados Técnicos 
 
