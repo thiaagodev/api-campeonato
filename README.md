@@ -1,7 +1,7 @@
 # API REST com MongoDB 
-API REST para realizar campeonatos de Rocket League com meus amigos, neste serviço é possível criar players para competir, mudar os dados da tabela como: vitórias, derrotas, gols marcados e sofridos, e o sistema calcula automáticamente a pontuação e o saldo de gols do jogador.
+API REST para realizar campeonatos de Rocket League com meus amigos, somente os melhores do bairro! neste serviço é possível criar players para competir, cadastrar novas partidas e o sistema calcula automaticamente a pontuação e o saldo de gols dos jogadores.
 
-Este serviço será consumido por um frontend feito em React para visualização e alteração da tabela.
+Este serviço está sendo consumido por um frontend feito em React para visualização e alteração da tabela.
 
 Link do repositório do front end em React: https://github.com/viiniciusgs/tabela-campeonato
 
